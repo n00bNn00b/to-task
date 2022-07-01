@@ -65,7 +65,7 @@ const Login = () => {
                 </span>
               </label>
               <p className="my-3">
-                Dont't have an Account?{" "}
+                Do not have an Account?{" "}
                 <Link className="mx-1 text-secondary font-bold" to="/signup">
                   Signup
                 </Link>{" "}

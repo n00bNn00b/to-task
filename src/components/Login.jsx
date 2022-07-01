@@ -1,6 +1,7 @@
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -35,7 +36,7 @@ const Login = () => {
       <div className="card-body w-full">
         <div className="w-80 flex mx-auto">
           <form className="my-10" onSubmit={loginHandler}>
-            <h2 className="text-center">Login</h2>
+            <h2 className="text-center font-bold text-2xl">Login</h2>
             <div>
               <label className="label">
                 <span className="label-text">Email</span>
@@ -44,7 +45,7 @@ const Login = () => {
                 type="email"
                 placeholder="i.e.: email@email.com"
                 name="email"
-                className="input input-bordered input-primary w-96"
+                className="input input-bordered w-80"
               />
             </div>
             <div className="mt-2">
@@ -56,8 +57,19 @@ const Login = () => {
                 name="password"
                 id="password"
                 placeholder="password"
-                className="input my-3 input-bordered input-primary w-96"
+                className="input my-3 input-bordered w-80"
               />
+              <label className="label">
+                <span className="label-text-alt text-red-600 font-bold">
+                  Error text
+                </span>
+              </label>
+              <p className="my-3">
+                Dont't have an Account?{" "}
+                <Link className="mx-1 text-secondary font-bold" to="/signup">
+                  Signup
+                </Link>{" "}
+              </p>
             </div>
             <input
               type="submit"

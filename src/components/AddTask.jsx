@@ -1,15 +1,21 @@
 import React from "react";
 
 const AddTask = () => {
+  const taskHandler = (e) => {
+    e.preventDefault();
+    const taskName = e.target.taskName.value;
+    console.log(taskName);
+  };
   return (
-    <div>
-      <form>
+    <div className="my-20">
+      <form className="flex justify-center" onSubmit={taskHandler}>
         <input
           type="text"
-          placeholder="Type here"
-          class="input input-bordered input-primary w-full max-w-xs"
+          placeholder="i.e: Learning JavaScript"
+          name="taskName"
+          className="input input-bordered input-primary w-full max-w-xs"
         />
-        <input type="submit" value="Add" />
+        <input className="btn btn-primary mx-2" type="submit" value="Add" />
       </form>
     </div>
   );

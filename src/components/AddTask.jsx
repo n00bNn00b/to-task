@@ -1,10 +1,24 @@
+import axios from "axios";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 
 const AddTask = () => {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
   const taskHandler = (e) => {
     e.preventDefault();
     const taskName = e.target.taskName.value;
-    console.log(taskName);
+    // console.log(taskName);
+    const url = "http://localhost:5000/tasks";
+    axios
+      .post(url, {
+        email,
+        taskName,
+      })
+      .then((res) => console.log("task post:", res))
+      .catch((err) => console.log("error:", err));
+    e.target.reset();
   };
   return (
     <div className="my-20">
@@ -13,6 +27,7 @@ const AddTask = () => {
           type="text"
           placeholder="i.e: Learning JavaScript"
           name="taskName"
+          id="taskName"
           className="input input-bordered input-primary w-full max-w-xs"
         />
         <input className="btn btn-primary mx-2" type="submit" value="Add" />

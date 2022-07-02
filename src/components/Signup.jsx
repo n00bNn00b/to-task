@@ -43,8 +43,8 @@ const Signup = () => {
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     await sendEmailVerification();
-    // signOut(auth);
-    // navigate("/login");
+    signOut(auth);
+    navigate("/login");
     e.target.reset();
   };
   return (

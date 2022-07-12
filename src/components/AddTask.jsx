@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../firebase.init";
 
 const AddTask = () => {
@@ -11,14 +12,20 @@ const AddTask = () => {
     const taskName = e.target.taskName.value;
     // console.log(taskName);
     const url = "http://localhost:5000/tasks";
-    axios
-      .post(url, {
-        email,
-        taskName,
-      })
-      .then((res) => console.log("task post:", res))
-      .catch((err) => console.log("error:", err));
-    e.target.reset();
+    if (taskName.length > 0) {
+      axios
+        .post(url, {
+          email,
+          taskName,
+        })
+        .then((res) => console.log("task post:", res))
+        .catch((err) => console.log("error:", err));
+      toast.success(taskName + " has been added!");
+      e.target.reset();
+    } else {
+      toast.warning("Please input a valid task!");
+      //
+    }
   };
   return (
     <div className="my-20">

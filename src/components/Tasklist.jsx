@@ -1,19 +1,25 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import auth from "../firebase.init";
 
 const Tasklist = ({ task }) => {
   const [clicked, setClicked] = useState(false);
   const [complete, setComplete] = useState(false);
+  const [user] = useAuthState(auth);
 
+  const email = user?.email;
   const { taskName, _id } = task;
   const viewHandler = () => {
-    setClicked(true);
+    setClicked(!clicked);
   };
   const completeHandler = () => {
-    const url = `http://localhost:5000/tasks/${_id}`;
-    console.log(url);
-    axios.delete(url, { data: taskName }).then((res) => console.log(res));
-    // setComplete(true);
+    const url = `http://localhost:5000/tasks/${email}/${_id}`;
+
+    axios.delete(url, { data: taskName });
+    toast.success(taskName + " has been set to completed!");
+    setComplete(true);
   };
   return (
     <div>

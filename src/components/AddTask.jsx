@@ -19,8 +19,14 @@ const AddTask = () => {
           taskName,
           status: "Not Complete",
         })
-        .then((res) => console.log(res.data));
-      toast.success(taskName + " has been added!");
+        .then((res) => {
+          if (res.data.success === false) {
+            toast.warning(taskName + " already has been added!");
+          } else {
+            toast.success(taskName + " has been added!");
+          }
+        });
+
       e.target.reset();
     } else {
       toast.warning("Please input a valid task!");

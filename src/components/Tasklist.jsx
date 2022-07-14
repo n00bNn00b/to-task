@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
 
-const Tasklist = ({ task }) => {
+const Tasklist = ({ task, index }) => {
   const [clicked, setClicked] = useState(false);
   const [complete, setComplete] = useState(false);
   const [user] = useAuthState(auth);
@@ -31,6 +31,7 @@ const Tasklist = ({ task }) => {
         <div className="card w-96 bg-base-100 shadow-xl mx-auto my-2">
           <div className="card-body">
             <h2 className="card-title">
+              {index + 1 + "."}
               <input
                 type="radio"
                 name="radio"

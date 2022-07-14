@@ -35,8 +35,8 @@ const Home = () => {
                 {tasks.length > 0 ? "My Task List" : "No Task Added Yet!"}
               </h1>
 
-              {tasks.map((task) => (
-                <Tasklist key={task._id} task={task} />
+              {tasks.map((task, index) => (
+                <Tasklist key={task._id} task={task} index={index} />
               ))}
               {tasks.length > 0 && (
                 <button className="btn btn-primary my-5 flex mx-auto">

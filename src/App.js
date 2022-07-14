@@ -7,6 +7,7 @@ import AddTask from "./components/AddTask";
 import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Completed from "./components/Completed";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/completed" element={<Completed />} />
         <Route path="/add" element={<AddTask />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

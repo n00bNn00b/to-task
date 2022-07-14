@@ -17,6 +17,7 @@ const AddTask = () => {
         .post(url, {
           email,
           taskName,
+          status: "On Progress",
         })
         .then((res) => console.log("task post:", res))
         .catch((err) => console.log("error:", err));

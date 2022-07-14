@@ -10,7 +10,7 @@ const Tasklist = ({ task }) => {
   const [user] = useAuthState(auth);
 
   const email = user?.email;
-  const { taskName, _id } = task;
+  const { taskName, _id, status } = task;
   const viewHandler = () => {
     setClicked(!clicked);
   };
@@ -22,6 +22,7 @@ const Tasklist = ({ task }) => {
     axios.post("http://localhost:5000/completed", {
       taskName,
       email,
+      status: "Complete",
     });
   };
   return (
@@ -39,6 +40,10 @@ const Tasklist = ({ task }) => {
               <span key={_id}>{taskName}</span>
             </h2>
 
+            <p>
+              <b>Status: </b>{" "}
+              <span className="text-yellow-400 font-bold"> {status} </span>
+            </p>
             {clicked && (
               <div className="card-actions justify-end">
                 <button className="btn btn-primary" onClick={completeHandler}>

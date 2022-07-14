@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Completed from "./components/Completed";
 import Calendar from "./components/Calendar";
 import NotFound from "./components/NotFound";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
   return (
@@ -17,9 +18,30 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/completed" element={<Completed />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/add" element={<AddTask />} />
+        <Route
+          path="/completed"
+          element={
+            <RequireAuth>
+              <Completed />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/calendar"
+          element={
+            <RequireAuth>
+              <Calendar />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <AddTask />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />

@@ -26,9 +26,12 @@ const Completed = () => {
           <h1 className="text-center font-bold text-2xl text-green-700">
             Completed Task List
           </h1>
-          <div className="flex justify-center items-center">
+          <div>
             {tasks.map((task) => (
-              <div key={task._id} className="card w-96 bg-base-100 shadow-xl">
+              <div
+                key={task._id}
+                className="card w-96 bg-base-100 shadow-xl mx-auto my-2"
+              >
                 <div className="card-body">
                   <h2 className="card-title">{task.taskName}</h2>
                   <p>

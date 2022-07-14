@@ -8,6 +8,8 @@ import Signup from "./components/Signup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Completed from "./components/Completed";
+import Calendar from "./components/Calendar";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/completed" element={<Completed />} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="/add" element={<AddTask />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>

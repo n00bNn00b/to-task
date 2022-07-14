@@ -7,7 +7,7 @@ import auth from "../firebase.init";
 const Navbar = () => {
   const [user] = useAuthState(auth);
   return (
-    <div className="navbar bg-primary text-white">
+    <div className="navbar fixed top-0 bg-primary text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -31,6 +31,9 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52"
           >
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               <Link to="/add">Add Task</Link>
             </li>
             <li tabIndex="0">
@@ -49,6 +52,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             <Link to="/add">Add Task</Link>
           </li>

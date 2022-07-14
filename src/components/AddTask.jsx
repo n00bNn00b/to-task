@@ -17,10 +17,9 @@ const AddTask = () => {
         .post(url, {
           email,
           taskName,
-          status: "On Progress",
+          status: "Not Complete",
         })
-        .then((res) => console.log("task post:", res))
-        .catch((err) => console.log("error:", err));
+        .then((res) => console.log(res.data));
       toast.success(taskName + " has been added!");
       e.target.reset();
     } else {

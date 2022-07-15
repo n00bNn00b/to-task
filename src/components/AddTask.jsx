@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
 
@@ -45,6 +46,12 @@ const AddTask = () => {
         />
         <input className="btn btn-primary mx-2" type="submit" value="Add" />
       </form>
+      <Link to="/">
+        {" "}
+        <button className="btn btn-primary my-5 flex mx-auto">
+          My Task List
+        </button>{" "}
+      </Link>
     </div>
   );
 };

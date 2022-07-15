@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import auth from "../firebase.init";
 import Loading from "./Loading";
 import Login from "./Login";
@@ -24,7 +25,7 @@ const Home = () => {
   // console.log(tasks);
 
   return (
-    <div className="my-20">
+    <div className="my-20 w-full">
       {user ? (
         <main>
           {loading ? (
@@ -39,9 +40,11 @@ const Home = () => {
                 <Tasklist key={task._id} task={task} index={index} />
               ))}
               {tasks.length > 0 && (
-                <button className="btn btn-primary my-5 flex mx-auto">
-                  ADD More Task
-                </button>
+                <Link to="/add">
+                  <button className="btn btn-primary my-5 flex mx-auto">
+                    Add More Task
+                  </button>
+                </Link>
               )}
             </div>
           )}

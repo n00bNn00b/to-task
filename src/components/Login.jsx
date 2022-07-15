@@ -32,9 +32,12 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
   return (
-    <div className="card w-full bg-base-100 shadow-2xl mx-auto my-20">
+    <div className="card w-80 bg-base-100 shadow-2xl mx-auto my-20">
       <div className="card-body w-full">
-        <div className="w-80 flex mx-auto">
+        <p className="text-red-500 font-bold">
+          Still under development! Some features may not work.
+        </p>
+        <div className="w-full flex mx-auto">
           <form className="my-10" onSubmit={loginHandler}>
             <h2 className="text-center font-bold text-2xl">Login</h2>
             <div>
@@ -45,7 +48,7 @@ const Login = () => {
                 type="email"
                 placeholder="i.e.: email@email.com"
                 name="email"
-                className="input input-bordered w-80"
+                className="input input-bordered w-64"
               />
             </div>
             <div className="mt-2">
@@ -57,7 +60,7 @@ const Login = () => {
                 name="password"
                 id="password"
                 placeholder="password"
-                className="input my-3 input-bordered w-80"
+                className="input my-3 input-bordered w-64"
               />
               <label className="label">
                 <span className="label-text-alt text-red-600 font-bold">

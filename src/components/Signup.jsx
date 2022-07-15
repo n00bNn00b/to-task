@@ -48,9 +48,9 @@ const Signup = () => {
     e.target.reset();
   };
   return (
-    <div className="card w-full bg-base-100 shadow-2xl mx-auto my-20">
+    <div className="card w-80 bg-base-100 shadow-2xl mx-auto my-20">
       <div className="card-body w-full">
-        <div className="w-80 flex mx-auto">
+        <div className="w-full flex mx-auto">
           <form className="my-10" onSubmit={signupHandler}>
             <h2 className="text-center font-bold text-2xl">Sign up</h2>
             <div className="mt-2">
@@ -62,7 +62,7 @@ const Signup = () => {
                 placeholder="i.e.: Felicia Herman"
                 name="name"
                 id="name"
-                className="input input-bordered w-80"
+                className="input input-bordered w-64"
               />
             </div>
             <div className="mt-2">
@@ -74,7 +74,7 @@ const Signup = () => {
                 placeholder="i.e.: email@email.com"
                 name="email"
                 id="email"
-                className="input input-bordered w-80"
+                className="input input-bordered w-64"
               />
             </div>
             <div className="mt-2">
@@ -86,7 +86,7 @@ const Signup = () => {
                 name="password"
                 id="password"
                 placeholder="password"
-                className="input my-3 input-bordered w-80"
+                className="input my-3 input-bordered w-64"
               />
               <label className="label">
                 <span className="label-text-alt text-red-600 font-bold">

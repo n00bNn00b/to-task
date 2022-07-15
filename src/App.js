@@ -11,11 +11,13 @@ import Completed from "./components/Completed";
 import Calendar from "./components/Calendar";
 import NotFound from "./components/NotFound";
 import RequireAuth from "./components/RequireAuth";
+import Maintenance from "./components/Maintenance";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Maintenance />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

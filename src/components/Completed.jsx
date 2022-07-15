@@ -2,20 +2,25 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 import Loading from "./Loading";
 
 const Completed = () => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [user] = useAuthState(auth);
+
+  const email = user?.email;
   useEffect(() => {
     axios
-      .get("https://to-task.herokuapp.com/completed")
+      .get(`https://to-task.herokuapp.com/tasks/${email}completed`)
       .then((res) => setTasks(res.data));
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 5000);
-  }, []);
+  }, [email]);
 
   return (
     <div className="my-20">

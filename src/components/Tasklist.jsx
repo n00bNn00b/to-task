@@ -19,7 +19,7 @@ const Tasklist = ({ task, index }) => {
     axios.delete(url, { data: taskName });
     toast.success(taskName + " has been set to completed!");
     setComplete(true);
-    axios.post("https://to-task.herokuapp.com/completed", {
+    axios.post(`https://to-task.herokuapp.com/tasks/${email}/completed`, {
       taskName,
       email,
       status: "Complete",

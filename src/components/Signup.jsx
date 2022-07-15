@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { signOut } from "firebase/auth";
+import Loading from "./Loading";
 
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -24,7 +25,7 @@ const Signup = () => {
     );
   }
   if (loading || updating || sending) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   if (user) {
     return (

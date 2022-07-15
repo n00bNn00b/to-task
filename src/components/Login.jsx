@@ -2,6 +2,7 @@ import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -15,7 +16,7 @@ const Login = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   if (user) {
     return (

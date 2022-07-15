@@ -13,7 +13,7 @@ const Home = () => {
   const email = user?.email;
 
   useEffect(() => {
-    const url = `http://localhost:5000/tasks/${email}`;
+    const url = `https://to-task.herokuapp.com/tasks/${email}`;
     axios.get(url).then((res) => setTasks(res.data));
 
     setLoading(true);

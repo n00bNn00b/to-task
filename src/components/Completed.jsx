@@ -9,7 +9,7 @@ const Completed = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/completed")
+      .get("https://to-task.herokuapp.com/completed")
       .then((res) => setTasks(res.data));
     setLoading(true);
     setTimeout(() => {

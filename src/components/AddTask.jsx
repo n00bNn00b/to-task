@@ -11,7 +11,7 @@ const AddTask = () => {
     e.preventDefault();
     const taskName = e.target.taskName.value;
     // console.log(taskName);
-    const url = "http://localhost:5000/tasks";
+    const url = "https://to-task.herokuapp.com/tasks";
     if (taskName.length > 0) {
       axios
         .post(url, {

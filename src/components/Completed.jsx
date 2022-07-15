@@ -14,7 +14,7 @@ const Completed = () => {
   const email = user?.email;
   useEffect(() => {
     axios
-      .get(`https://to-task.herokuapp.com/tasks/${email}completed`)
+      .get(`https://to-task.herokuapp.com/tasks/${email}/completed`)
       .then((res) => setTasks(res.data));
     setLoading(true);
     setTimeout(() => {

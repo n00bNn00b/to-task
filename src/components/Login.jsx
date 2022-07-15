@@ -1,12 +1,14 @@
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
 
   if (error) {
     return (
@@ -19,11 +21,7 @@ const Login = () => {
     return <Loading />;
   }
   if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.email}</p>
-      </div>
-    );
+    return navigate("/");
   }
 
   const loginHandler = (e) => {

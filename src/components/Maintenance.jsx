@@ -1,6 +1,7 @@
 import React from "react";
 
 const Maintenance = () => {
+  document.title = "Under Maintenance";
   return (
     <div className="alert alert-info w-80 my-20  flex mx-auto shadow-lg">
       <div>

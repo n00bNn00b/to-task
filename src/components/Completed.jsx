@@ -12,6 +12,7 @@ const Completed = () => {
   const [user] = useAuthState(auth);
 
   const email = user?.email;
+  document.title = "To Task - Completed Task";
   useEffect(() => {
     axios
       .get(`https://to-task.herokuapp.com/tasks/${email}/completed`)

@@ -11,6 +11,7 @@ const Tasklist = ({ task, index }) => {
 
   const email = user?.email;
   const { taskName, _id, status } = task;
+  document.title = "To Task - My Task List";
   const viewHandler = () => {
     setClicked(!clicked);
   };

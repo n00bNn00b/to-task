@@ -12,6 +12,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [user] = useAuthState(auth);
   const email = user?.email;
+  document.title = "To Task - Home";
 
   useEffect(() => {
     const url = `https://to-task.herokuapp.com/tasks/${email}`;

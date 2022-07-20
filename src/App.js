@@ -12,6 +12,7 @@ import Calendar from "./components/Calendar";
 import NotFound from "./components/NotFound";
 import RequireAuth from "./components/RequireAuth";
 import Maintenance from "./components/Maintenance";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
           element={
             <RequireAuth>
               <AddTask />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <Profile />
             </RequireAuth>
           }
         />

@@ -8,6 +8,7 @@ import auth from "../firebase.init";
 const AddTask = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
+  document.title = "To Task - Add Task";
   const taskHandler = (e) => {
     e.preventDefault();
     const taskName = e.target.taskName.value;

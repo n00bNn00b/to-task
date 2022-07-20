@@ -16,6 +16,7 @@ const Signup = () => {
   const [sendEmailVerification, sending, errorVerification] =
     useSendEmailVerification(auth);
   const navigate = useNavigate();
+  document.title = "To Task - Sign Up";
 
   if (error || errorProfile || errorVerification) {
     return (

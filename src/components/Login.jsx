@@ -7,6 +7,7 @@ import Loading from "./Loading";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  document.title = "To Task - Login";
 
   const navigate = useNavigate();
 

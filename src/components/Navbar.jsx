@@ -72,9 +72,34 @@ const Navbar = () => {
             Login
           </Link>
         ) : (
-          <button className="btn btn-primary" onClick={() => signOut(auth)}>
-            Logout
-          </button>
+          <div className="dropdown lg:mx-48 md:mx-40">
+            <label tabIndex="0" className="btn btn-primary me-1">
+              <div className="avatar">
+                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img
+                    src="https://placeimg.com/192/192/people"
+                    alt="profile_picture"
+                  />
+                </div>
+              </div>
+            </label>
+            <ul
+              tabIndex="0"
+              className="dropdown-content menu shadow bg-primary rounded-box mt-3 w-52"
+            >
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => signOut(auth)}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
         )}
       </div>
     </div>

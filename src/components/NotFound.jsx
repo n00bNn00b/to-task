@@ -1,6 +1,7 @@
 import React from "react";
 
 const NotFound = () => {
+  document.title = "Error! 404";
   return (
     <div className="mt-20 text-center">
       <h1 className="text-5xl">Error! 404</h1>
